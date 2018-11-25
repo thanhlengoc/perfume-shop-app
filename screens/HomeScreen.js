@@ -7,20 +7,19 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Navigator,
 } from 'react-native';
-//import { WebBrowser } from 'expo';
-//import { MonoText } from '../components/StyledText';
+//import { SearchBar, Header } from 'react-native-elements';
 
-const MenuButton = (props) => (
-  <TouchableOpacity onPress={ () => {props.navigation.openDrawer();}} style={{paddingLeft:10}}>
-    <Image source ={require('../assets/images/list2.png')} />
-  </TouchableOpacity>
-);
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = ({navigation}) => ({
-    //header: null,
-    //headerTitle: <LogoTitle />,
+    // header: <Header
+    //   leftComponent={{ icon: 'menu', color: '#fff' }}
+    //   centerComponent={{ text: 'Perfume Shop', style: { color: '#fff' } }}
+    //   rightComponent={{ icon: 'home', color: '#fff' }}
+    // />,
+    headerTitle: 'Perfume Shop',
     title: 'Clothing',
     headerStyle: {
         backgroundColor: '#f4511e',

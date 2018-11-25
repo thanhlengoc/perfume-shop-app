@@ -11,7 +11,6 @@ import ContactScreen from '../screens/ContactScreen';
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
-
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
@@ -29,7 +28,6 @@ HomeStack.navigationOptions = {
 const CartStack = createStackNavigator({
   Cart: CartScreen,
 });
-
 CartStack.navigationOptions = {
   tabBarLabel: 'Cart',
   tabBarIcon: ({ focused }) => (
@@ -43,7 +41,6 @@ CartStack.navigationOptions = {
 const SearchStack = createStackNavigator({
   Search: SearchScreen,
 });
-
 SearchStack.navigationOptions = {
   tabBarLabel: 'Search',
   tabBarIcon: ({ focused }) => (
@@ -57,7 +54,6 @@ SearchStack.navigationOptions = {
 const ContactStack = createStackNavigator({
   Contact: ContactScreen,
 });
-
 ContactStack.navigationOptions = {
   tabBarLabel: 'Contact',
   tabBarIcon: ({ focused }) => (
