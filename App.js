@@ -1,21 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import { Navigator } from 'react-native-deprecated-custom-components';
+import Authentication from './components/Authenication/Authenication';
+import ChangeInfo from './components/ChangeInfo/ChangeInfo';
+import Main from './components/Main/Main';
+import OrderHistory from './components/OrderHistory/OrderHistory';
+
+StatusBar.setHidden(true);
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Navigator
+        initialRoute = {{ name: 'MAIN' }}
+        renderScene = {(route, navigator) => {
+          switch (route.name) {
+            case 'MAIN': return <Main navigator={navigator}/>;
+            case 'CHANGE_INFO': return <ChangeInfo navigator={navigator} user={route.user}/>;
+            case 'AUTHENTICATION': return <Authentication navigator={navigator}/>;
+            default: return <OrderHistory navigator={navigator}/>
+          }
+        }}
+        configureScene = { route => {
+          if(route.name === 'AUTHENTICATION') return Navigator.SceneConfigs.FloatFromRight;
+          return Navigator.SceneConfigs.FloatFromLeft;
+        }}
+        />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
