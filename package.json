@@ -21,6 +21,7 @@
     "react-native-deprecated-custom-components": "git+https://github.com/facebookarchive/react-native-custom-components.git",
     "react-native-drawer": "^2.5.1",
     "react-native-elements": "^0.19.1",
+    "react-native-tab-navigator": "^0.3.4",
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {
