@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import signIn from '../../api/signIn';
-import saveToken from '../../api/saveToken';
-import global from '../global';
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -11,17 +8,6 @@ export default class SignIn extends Component {
             email: '',
             password: ''
         };
-    }
-
-    onSignIn() {
-        const { email, password } = this.state;
-        signIn(email, password)
-            .then(res => {
-                global.onSignIn(res.user);
-                this.props.goBackToMain();
-                saveToken(res.token);
-            })
-            .catch(err => console.log(err));
     }
 
     render() {
@@ -40,7 +26,8 @@ export default class SignIn extends Component {
                         value={password}
                         onChangeText={text => this.setState({ password: text })}
                         secureTextEntry/>
-                <TouchableOpacity style={bigButton} onPress={this.onSignIn.bind(this)}>
+                {/* <TouchableOpacity style={bigButton} onPress={this.onSignIn.bind(this)}> */}
+                <TouchableOpacity style={bigButton}>
                     <Text style={buttonText}>SIGN IN NOW</Text>
                 </TouchableOpacity>
             </View>

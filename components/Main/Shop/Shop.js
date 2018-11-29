@@ -48,7 +48,7 @@ class Shop extends Component {
                         renderSelectedIcon={() => <Image source={homeIconS} style={iconStyle} />}
                         selectedTitleStyle={{ color: '#34B089', fontFamily: 'Avenir' }}
                     >
-                        <Home types={types} topProducts={topProducts}/>
+                        <Home/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={selectedTab === 'cart'}

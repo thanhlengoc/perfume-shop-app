@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import register from '../../api/register';
+//import register from '../../api/register';
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -11,41 +11,6 @@ export default class SignUp extends Component {
             password: '',
             rePassword: '',
         };
-    }
-
-    onSuccess() {
-        Alert.alert(
-            'Notice',
-            'Sign up successfully',
-            [
-                { text: 'OK', onPress: this.props.gotoSignIn() }
-            ],
-            { cancelable: false }
-        );
-    }
-
-    onFail() {
-        Alert.alert(
-            'Notice',
-            'Email has been used by other',
-            [
-                { text: 'OK', onPress: () => this.removeEmail.bind(this) }
-            ],
-            { cancelable: false }
-        );
-    }
-
-    removeEmail() {
-        this.setState({ email: '' });
-    }
-
-    registerUser() {
-        const { name, email, password } = this.state;
-        register(email, name, password)
-        .then(res => {
-            if (res === 'THANH_CONG') return this.onSuccess();
-            this.onFail();
-        });
     }
 
     render() {
@@ -78,7 +43,8 @@ export default class SignUp extends Component {
                     secureTextEntry
                     onChangeText={text => this.setState({ rePassword: text })}
                 />
-                <TouchableOpacity style={bigButton} onPress={this.registerUser.bind(this)}>
+                {/* <TouchableOpacity style={bigButton} onPress={this.registerUser.bind(this)}> */}
+                <TouchableOpacity style={bigButton}>
                     <Text style={buttonText}>SIGN UP NOW</Text>
                 </TouchableOpacity>
             </View>

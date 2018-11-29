@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {  } from 'react-native-deprecated-custom-components';
-
-import Homeview from './HomeView';
+import {View} from 'react-native';
 
 export default class Home extends Component {
     constructor(props) {
@@ -9,6 +7,10 @@ export default class Home extends Component {
     }
 
     render() {
-        return null;
+        return (
+            <View>
+                
+            </View>
+        )
     }
 }
