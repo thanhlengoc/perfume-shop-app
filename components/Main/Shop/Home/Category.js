@@ -1,10 +1,10 @@
 
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, ImageBackground } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 const { width } = Dimensions.get('window');
-const url = 'http://localhost/api/images/type/';
+const url = 'http://localhost/perfume-shop-server/images/type/';
 
 export default class Category extends Component {
     gotoListProduct(category) {
@@ -19,9 +19,9 @@ export default class Category extends Component {
             <Swiper showsPagination width={imageWidth} height={imageHeight} >
                 { types.map(e => (
                     <TouchableOpacity onPress={() => this.gotoListProduct(e)} key={e.id}>
-                        <Image source={{ uri: `${url}${e.image}` }} style={imageStyle}>
+                        <ImageBackground source={{ uri: `${url}${e.image}` }} style={imageStyle}>
                             <Text style={cateTitle}>{e.name}</Text>
-                        </Image>
+                        </ImageBackground>
                     </TouchableOpacity>
                 )) }
             </Swiper>

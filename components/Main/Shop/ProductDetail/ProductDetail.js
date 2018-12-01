@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { 
     View, Text, StyleSheet, Image, Dimensions, ScrollView, TouchableOpacity 
 } from 'react-native';
-import global from '../../../global';
+import global from '../../../../global';
 
 const back = require('../../../../media/appIcon/back.png');
 const cart = require('../../../../media/appIcon/cartfull.png');
 
-const url = 'http://localhost/api/images/product/';
+const url = 'http://localhost/perfume-shop-server/images/product/';
 
 export default class ProductDetail extends Component {
     goBack() {

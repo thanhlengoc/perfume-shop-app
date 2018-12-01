@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 import Drawer from 'react-native-drawer';
 import Menu from './Menu';
 import Shop from './Shop/Shop';
-//import global from '../global';
+import checkLogin from '../../api/checkLogin';
+import getToken from '../../api/getToken';
+import global from '../../global';
 
 export default class Main extends Component {
-    
+    componentDidMount() {
+        getToken()
+        .then(token => checkLogin(token))
+        .then(res => global.onSignIn(res.user))
+        .catch(err => console.log('LOI CHECK LOGIN', err));
+    }
     closeControlPanel = () => {
         this.drawer.close();
     };
     openControlPanel = () => {
         this.drawer.open();
     };
-
     render() {
-        const { Navigator } = this.props
+        const { navigator } = this.props;
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
@@ -22,8 +28,8 @@ export default class Main extends Component {
                 openDrawerOffset={0.4}
                 tapToClose
             >
-                <Shop open={ this.openControlPanel.bind(this) } />
+                <Shop open={this.openControlPanel.bind(this)} />
             </Drawer>
-        )
+        );
     }
 }

@@ -3,11 +3,20 @@ import {
     View, TouchableOpacity, Text, Image, StyleSheet, Dimensions, ScrollView
 } from 'react-native';
 import backSpecial from '../../media/appIcon/backs.png';
+import getOrderHistory from '../../api/getOrderHistory';
+import getToken from '../../api/getToken';
 
 export default class OrderHistory extends Component {
     constructor(props) {
         super(props);
         this.state = { arrOrder: [] };
+    }
+
+    componentDidMount() {
+        getToken()
+        .then(token => getOrderHistory(token))
+        .then(arrOrder => this.setState({ arrOrder }))
+        .catch(err => console.log(err));
     }
 
     goBackToMain() {

@@ -1,9 +1,9 @@
 const getListProduct = (idType, page) => {
     let url;
     if (idType !== 'COLLECTION') {
-        url = `http://10.200.237.10/api/product_by_type.php?id_type=${idType}&page=${page}`;
+        url = `http://10.200.232.183/perfume-shop-server/product_by_type.php?id_type=${idType}&page=${page}`;
     } else {
-        url = `http://10.200.237.10/api/get_collection.php?page=${page}`;
+        url = `http://10.200.232.183/perfume-shop-server/get_collection.php?page=${page}`;
     }
     return fetch(url)
     .then(res => res.json());

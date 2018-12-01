@@ -13,7 +13,7 @@ export default class Collection extends Component {
 
     render() {
         const { wrapper, textStyle, imageStyle } = styles;
-        reuturn(
+        return(
             <View style={wrapper}>
                 <View style={{ height: 50, justifyContent: 'center' }}>
                     <Text style={textStyle} >SPRING COLLECTION</Text>

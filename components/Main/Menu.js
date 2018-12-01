@@ -5,21 +5,22 @@ import {
 } from 'react-native';
 import global from '../../global';
 import profileIcon from '../../media/temp/profile.png';
+import saveToken from '../../api/saveToken';
 
 class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = { user: null};
-        //global.onSignIn = this.onSignIn.bind(this);
+        global.onSignIn = this.onSignIn.bind(this);
     }
 
-    onsignin(user) {
+    onSignIn(user) {
         this.setState({user});
     }
 
     onSignOut() {
         this.setState({ user: null });
-        //saveToken('');
+        saveToken('');
     }
 
     gotoAuthentication() {
