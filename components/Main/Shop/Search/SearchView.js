@@ -34,7 +34,36 @@ class SearchView extends Component {
             txtShowDetail, showDetailContainer, wrapper
         } = styles;
         return (
-
+          <View style={wrapper}>
+              <ListView
+                  dataSource={this.state.listProduct}
+                  renderRow={productItem => (
+                      <View style={product}>
+                          <Image source={{ uri: `${url}${productItem.images[0]}` }} style={productImage} />
+                          <View style={mainRight}>
+                              <Text style={txtName}>{toTitleCase(productItem.name)}</Text>
+                              <Text style={txtPrice}>{productItem.price}$</Text>
+                              <Text style={txtMaterial}>Material {productItem.material}</Text>
+                              <View style={{ flexDirection: 'row' }} >
+                                  <Text style={txtColor}>Color {productItem.color}</Text>
+                                  <View
+                                      style={{
+                                          height: 15,
+                                          width: 15,
+                                          backgroundColor: 'white',
+                                          borderRadius: 15,
+                                          marginLeft: 10
+                                      }}
+                                  />
+                              </View>
+                              <TouchableOpacity style={showDetailContainer} onPress={() => this.gotoDetail(productItem)}>
+                                  <Text style={txtShowDetail}>SHOW DETAILS</Text>
+                              </TouchableOpacity>
+                          </View>
+                      </View>
+                  )}
+              />
+          </View>
         );
     }
 }
