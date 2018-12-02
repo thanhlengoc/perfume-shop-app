@@ -20,8 +20,13 @@ class SearchView extends Component {
         };
         global.setArraySearch = this.setSearchArray.bind(this);
     }
-
-
+    setSearchArray(arrProduct) {
+        this.setState({ listProduct: this.state.listProduct.cloneWithRows(arrProduct) });
+    }
+    gotoDetail(product) {
+        const { navigator } = this.props;
+        navigator.push({ name: 'PRODUCT_DETAIL', product });
+    }
     render() {
         const {
             product, mainRight, txtMaterial, txtColor,
