@@ -9,5 +9,4 @@ const saveToken = async (token) => {
         return e;
     }
 }
-
 export default saveToken;

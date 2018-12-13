@@ -1,5 +1,5 @@
 const checkLogin = (token) => (
-    fetch('http://10.200.232.183/perfume-shop-server/check_login.php',
+    fetch('http://10.200.230.136/perfume-shop-server/check_login.php',
     {   
         method: 'POST',
         headers: {
@@ -10,6 +10,4 @@ const checkLogin = (token) => (
     })
     .then(res => res.json())
 );
-
-//module.exports = checkLogin;
 export default checkLogin;

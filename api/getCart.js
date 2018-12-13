@@ -12,5 +12,4 @@ const getCart = async () => {
         return [];
     }
 };
-
 export default getCart;

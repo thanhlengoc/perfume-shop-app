@@ -1,5 +1,6 @@
+
 const register = (email, name, password) => (
-    fetch('http://10.200.232.183/perfume-shop-server/register.php', {
+    fetch('http://10.200.230.136/perfume-shop-server/register.php', {
         method: POST,
         headers: {
             'Content-Type': 'application/json',
@@ -9,6 +10,4 @@ const register = (email, name, password) => (
     })
     .then(res => res.text())
 );
-
-//module.exports = register;
 export default register;

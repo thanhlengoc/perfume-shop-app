@@ -1,5 +1,5 @@
 const signIn = (email, password) => (
-    fetch('http://10.200.232.183/perfume-shop-server/login.php', {
+    fetch('http://10.200.230.136/perfume-shop-server/login.php', {
         method: POST,
         headers: {
             'Content-Type': 'application/json',
@@ -9,6 +9,4 @@ const signIn = (email, password) => (
     })
     .then(res => res.text())
 )
-
-//module.exports = signIn;
 export default signIn;
