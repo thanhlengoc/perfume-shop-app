@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import global from '../../../../global';
 
-const url = 'http://10.200.230.136/perfume-shop-server/images/product/';
+const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
 
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());

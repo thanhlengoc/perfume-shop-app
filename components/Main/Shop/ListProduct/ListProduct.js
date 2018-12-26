@@ -8,7 +8,7 @@ import getListProduct from '../../../../api/getListProduct';
 
 import backList from '../../../../media/appIcon/backList.png';
 
-const url = 'http://10.200.230.136/perfume-shop-server/images/product/';
+const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 }
@@ -107,33 +107,6 @@ export default class ListProduct extends Component {
         );
     }
 }
-
-/*
-    <ScrollView style={wrapper}>
-        <View style={header}>
-            <TouchableOpacity onPress={this.goBack.bind(this)}>
-                <Image source={backList} style={backStyle} />
-            </TouchableOpacity>
-            <Text style={titleStyle}>{category.name}</Text>
-            <View style={{ width: 30 }} />
-        </View>
-        <View style={productContainer}>
-            <Image style={productImage} source={sp1} />
-            <View style={productInfo}>
-                <Text style={txtName}>Lace Sleeve Si</Text>
-                <Text style={txtPrice}>117$</Text>
-                <Text style={txtMaterial}>Material silk</Text>
-                <View style={lastRowInfo}>
-                    <Text style={txtColor}>Colo RoyalBlue</Text>
-                    <View style={{ backgroundColor: 'cyan', height: 16, width: 16, borderRadius: 8 }} />
-                    <TouchableOpacity>
-                        <Text style={txtShowDetail}>SHOW DETAILS</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </View>
-    </ScrollView>
-*/
 
 const styles = StyleSheet.create({
     container: {

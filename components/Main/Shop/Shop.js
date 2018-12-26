@@ -105,7 +105,7 @@ class Shop extends Component {
                         onPress={() => this.setState({ selectedTab: 'home' })}
                         renderIcon={() => <Image source={homeIcon} style={iconStyle} />}
                         renderSelectedIcon={() => <Image source={homeIconS} style={iconStyle} />}
-                        selectedTitleStyle={{ color: '#34B089', fontFamily: 'Avenir' }}
+                        selectedTitleStyle={{ color: '#db7093', fontFamily: 'Avenir' }}
                     >
                         <Home types={types} topProducts={topProducts}/>
                     </TabNavigator.Item>
@@ -116,7 +116,7 @@ class Shop extends Component {
                         renderIcon={() => <Image source={cartIcon} style={iconStyle} />}
                         renderSelectedIcon={() => <Image source={cartIconS} style={iconStyle} />}
                         badgeText={cartArray.length}
-                        selectedTitleStyle={{ color: '#34B089', fontFamily: 'Avenir' }}
+                        selectedTitleStyle={{ color: '#db7093', fontFamily: 'Avenir' }}
                     >
                         <Cart cartArray={cartArray}/>
                     </TabNavigator.Item>
@@ -126,7 +126,7 @@ class Shop extends Component {
                         onPress={() => this.setState({ selectedTab: 'search' })}
                         renderIcon={() => <Image source={searchIcon} style={iconStyle} />}
                         renderSelectedIcon={() => <Image source={searchIconS} style={iconStyle} />}
-                        selectedTitleStyle={{ color: '#34B089', fontFamily: 'Avenir' }}
+                        selectedTitleStyle={{ color: '#db7093', fontFamily: 'Avenir' }}
                     >
                         <Search/>
                     </TabNavigator.Item>
@@ -136,7 +136,7 @@ class Shop extends Component {
                         onPress={() => this.setState({ selectedTab: 'contact' })}
                         renderIcon={() => <Image source={contactIcon} style={iconStyle} />}
                         renderSelectedIcon={() => <Image source={contactIconS} style={iconStyle} />}
-                        selectedTitleStyle={{ color: '#34B089', fontFamily: 'Avenir' }}
+                        selectedTitleStyle={{ color: '#db7093', fontFamily: 'Avenir' }}
                     >
                         <Contact/>
                     </TabNavigator.Item>

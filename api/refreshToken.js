@@ -2,7 +2,7 @@ import saveToken from './saveToken';
 import getToken from './getToken';
 
 const getNewToken = (token) => (
-    fetch('http://10.200.230.136/perfume-shop-server/refresh_token.php',
+    fetch('http://10.200.230.168/perfume-shop-server/refresh_token.php',
     {   
         method: 'POST',
         headers: {

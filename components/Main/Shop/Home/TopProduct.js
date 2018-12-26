@@ -4,7 +4,7 @@ import {
     View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, ListView 
 } from 'react-native';
 
-const url = 'http://10.200.230.136/perfume-shop-server/images/product/';
+const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
 
 export default class TopProduct extends Component {
     gotoDetail(product) {
@@ -30,7 +30,7 @@ export default class TopProduct extends Component {
                     dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }).cloneWithRows(topProducts)}
                     renderRow={ product => (
                         <TouchableOpacity style={productContainer} onPress={() => this.gotoDetail(product)}>
-                            <Image source={{ uri: `${url}${product.images[0]}` }} style={productImage} />
+                            <Image source={{ uri:`${url}${product.images[0]}`}} style={productImage} />
                             <Text style={produceName}>{product.name.toUpperCase()}</Text>
                             <Text style={producePrice}>{product.price}$</Text>
                         </TouchableOpacity>

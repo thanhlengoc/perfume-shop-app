@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { 
     View, Text, TouchableOpacity, Image, Dimensions, TextInput, StyleSheet 
 } from 'react-native';
+import global from '../../../global';
 import icLogo from '../../../media/appIcon/ic_logo.png';
 import icMenu from '../../../media/appIcon/ic_menu.png';
+import search from '../../../api/searchProduct';
+
+const { height } = Dimensions.get('window');
 
 export default class Header extends Component {
     constructor(props) {
@@ -11,6 +15,14 @@ export default class Header extends Component {
         this.state = {
             txtSearch: ''
         };
+    }
+
+    onSearch() {
+        const { txtSearch } = this.state;
+        this.setState({ txtSearch: '' });
+        search(txtSearch)
+        .then(arrProduct => global.setArraySearch(arrProduct))
+        .catch(err => console.log(err));
     }
 
     render() {
@@ -30,24 +42,24 @@ export default class Header extends Component {
                     underlineColorAndroid="transparent"
                     value={this.state.txtSearch}
                     onChangeText={text => this.setState({ txtSearch: text })}
-                    //onFocus={() => global.gotoSearch()} 
-                    //onSubmitEditing={this.onSearch.bind(this)}
+                    onFocus={() => global.gotoSearch()} 
+                    onSubmitEditing={this.onSearch.bind(this)}
                 />
             </View>
-        )
+        );
     }
 }
 
 const styles = StyleSheet.create({
     wrapper: { 
-        //height: height / 8, 
-        backgroundColor: '#34B089', 
+        height: height / 8, 
+        backgroundColor: '#db7093', //#34B089
         padding: 10, 
         justifyContent: 'space-around' 
     },
     row1: { flexDirection: 'row', justifyContent: 'space-between' },
     textInput: { 
-        //height: height / 23, 
+        height: height / 23, 
         backgroundColor: '#FFF', 
         paddingLeft: 10,
         paddingVertical: 0 
