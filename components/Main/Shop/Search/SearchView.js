@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
     StyleSheet, Text, TouchableOpacity,
-    ListView, View, Image, Dimensions
+    ListView, View, Image, Dimensions, Alert
 } from 'react-native';
 import global from '../../../../global';
 
-const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
+const url = 'http://192.168.35.103/perfume-shop-server/images/product/';
 
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
@@ -22,6 +22,9 @@ class SearchView extends Component {
     }
     setSearchArray(arrProduct) {
         this.setState({ listProduct: this.state.listProduct.cloneWithRows(arrProduct) });
+        if(this.state.listProduct === null){
+            Alert.alert("Product not found!");
+        }
     }
     gotoDetail(product) {
         const { navigator } = this.props;
@@ -62,6 +65,7 @@ class SearchView extends Component {
                           </View>
                       </View>
                   )}
+                enableEmptySections={true}
               />
           </View>
         );

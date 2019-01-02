@@ -4,7 +4,7 @@ import {
     View, Text, Image, StyleSheet, Dimensions, TouchableOpacity, ListView 
 } from 'react-native';
 
-const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
+const url = 'http://192.168.35.103/perfume-shop-server/images/product/';
 
 export default class TopProduct extends Component {
     gotoDetail(product) {

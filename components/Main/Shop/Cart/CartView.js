@@ -11,7 +11,7 @@ function toTitleCase(str) {
     return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 }
 
-const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
+const url = 'http://192.168.35.103/perfume-shop-server/images/product/';
 
 class CartView extends Component {
     incrQuantity(id) {
@@ -61,6 +61,7 @@ class CartView extends Component {
                     enableEmptySections
                     dataSource={new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }).cloneWithRows(cartArray)}
                     renderRow={cartItem => (
+                        <TouchableOpacity style={showDetailContainer} onPress={() => this.gotoDetail(cartItem.product)}>
                         <View style={productStyle}>
                             <Image source={{ uri: `${url}${cartItem.product.images[0]}` }} style={productImage} />
                             <View style={[mainRight]}>
@@ -89,7 +90,9 @@ class CartView extends Component {
                                 </View>
                             </View>
                         </View>
+                        </TouchableOpacity>
                     )}
+                    
                 />
                 <TouchableOpacity style={checkoutButton} onPress={this.onSendOrder.bind(this)}>
                     <Text style={checkoutTitle}>TOTAL {total}$ CHECKOUT NOW</Text>

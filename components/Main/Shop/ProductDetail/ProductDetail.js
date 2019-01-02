@@ -7,7 +7,7 @@ import global from '../../../../global';
 const back = require('../../../../media/appIcon/back.png');
 const cart = require('../../../../media/appIcon/cartfull.png');
 
-const url = 'http://10.200.230.168/perfume-shop-server/images/product/';
+const url = 'http://192.168.35.103/perfume-shop-server/images/product/';
 
 export default class ProductDetail extends Component {
     goBack() {

@@ -1,6 +1,6 @@
 
 const register = (email, name, password) => (
-    fetch('http://10.200.230.168/perfume-shop-server/register.php', 
+    fetch('http://192.168.35.103/perfume-shop-server/register.php', 
     {
         method: 'POST',
         headers: {
